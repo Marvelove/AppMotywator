@@ -22,7 +22,7 @@ namespace AppMotywator.Controllers
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = "Contact with us!";
 
             return View();
         }
