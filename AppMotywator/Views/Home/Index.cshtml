@@ -1,9 +1,13 @@
-﻿@{
+﻿@model AppMotywator.Models.UserBmiModel
+@{
     ViewBag.Title = "Home Page";
 }
+
 <div class="background" style="text-align: center">
-    <h1>Motywator</h1>
-    <p class="lead">Witaj! Życzymy wytrwałości</p>
+    <div style="opacity: revert">
+        <h1>Aplikacja Motywator</h1>
+        <h2>Twoje BMI wynosi @Model.Bmi, interpretacja to @Model.UserBmiInfo</h2>
+    </div>
 </div>
 <div class="row">
     <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">

@@ -1,17 +1,121 @@
-﻿@{
-    ViewBag.Title = "Contact";
+﻿@model AppMotywator.Models.UserInformationModel
+@using (Html.BeginForm())
+{
+    <br />
+    <div class="col-md-5">
+        <div class="row">
+            <div class="col-md-5">
+                @Html.LabelFor(s => s.Age, "Age : ")
+            </div>
+            <div class="col-md-5">
+                @Html.TextBoxFor(s => s.Age, new { @class = "form-control" })
+                @Html.ValidationMessageFor(s => s.Age,null, new { @class = "col-md-offset-2 alert-unique" })<br /><br />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-5">
+                @Html.LabelFor(s => s.Height, "Height [cm] : ")
+            </div>
+            <div class="col-md-5">
+                @Html.TextBoxFor(s => s.Height, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Height, null, new { @class = "col-md-offset-2 alert-unique" })<br /><br />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-5">
+                @Html.LabelFor(s => s.Weight, "Weight [kg] : ")
+            </div>
+            <div class="col-md-5">
+                @Html.TextBoxFor(s => s.Weight, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Weight, null, new { @class = "col-md-offset-2 alert-unique" })<br /><br />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-5">
+                @Html.LabelFor(s => s.Gender, "Gender : ")
+            </div>
+            <div class="col-md-5">
+                @Html.RadioButtonFor(m => m.Gender, 1 ,new { Checked = "checked" }) @Html.Raw("Male") <br />
+                @Html.RadioButtonFor(m => m.Gender, 2) @Html.Raw("Female")<br /><br />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-5">
+                @Html.LabelFor(s => s.BodyType, "BodyType : ")
+            </div>
+            <div class="col-md-5">
+                @Html.RadioButtonFor(m => m.BodyType, 1, new { Checked = "checked" }) @Html.Raw("Ectomorphic") <br />
+                @Html.RadioButtonFor(m => m.BodyType, 2) @Html.Raw("Mesomorphic")<br />
+                @Html.RadioButtonFor(m => m.BodyType, 3) @Html.Raw("Endomorphic")<br /><br />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-5">
+                @Html.LabelFor(s => s.Target, "Target : ")
+            </div>
+            <div class="col-md-5">
+                @Html.RadioButtonFor(m => m.Target, 1, new { Checked = "checked" }) @Html.Raw("Building mass")<br />
+                @Html.RadioButtonFor(m => m.Target, 2) @Html.Raw("Reduction")<br /><br />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-5">
+                @Html.LabelFor(s => s.Lifestyle, "Lifestyle : ")
+            </div>
+            <div class="col-md-5">
+                @Html.DropDownList("Lifestyle")<br /><br /><br />
+            </div>
+        </div>
+
+        <div class="input">
+            <input type="submit" name="submit" value="Submit" style="font-size: 1.0em; color: white; background-color: #808080" />
+        </div>
+    </div>
+    <div class="col-md-6 formateTable" >
+        <br />
+        <span class="middle">
+            <strong>TYPES OF BODY </strong>
+        </span>
+        <table style="width: 100%">
+            <br/>
+            <tr>
+                <th>Ectomorphic</th>
+                <th>Mesomorphic</th>
+                <th>Endomorphic</th>
+
+            </tr>
+            <tr>
+                <td>skinny,<br/> linear appearance</td>
+                <td>naturally lean</td>
+                <td>smooth,<br/> round body</td>
+            </tr>
+            <tr>
+                <td>small shoulders,<br />chest and buttocks</td>
+                <td>broad/square shoulders</td>
+                <td>small shoulders,<br /> high waist and large hips</td>
+
+            </tr>
+            <tr>
+                <td>lightly muscled</td>
+                <td>naturally muscular</td>
+                <td>gains muscle easily,<br/> but tends to be underdeveloped</td>
+            </tr>
+            <tr>
+                <td>fast and efficient metabolism</td>
+                <td>efficient metabolism</td>
+                <td>slow metabolic rate</td>
+            </tr>
+            <tr>
+                <td>low body fat without exercising</td>
+                <td>naturally strong</td>
+                <td>high levels of body fat</td>
+            </tr>
+
+        </table>
+    </div>
 }
-<h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
-
-<address>
-    One Microsoft Way<br />
-    Redmond, WA 98052-6399<br />
-    <abbr title="Phone">P:</abbr>
-    425.555.0100
-</address>
-
-<address>
-    <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
-    <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
-</address>
